@@ -85,7 +85,7 @@ console.log(FCC, fact);
 
 // Lesson 11: add Two Numbers with JavaScript
 
-const sum = 10 + 10;
+const summa = 10 + 10;
 
 
 
@@ -149,50 +149,50 @@ const remainder = 11 % 3;
 
 // Lesson 21: Compound Assignment With Augmented Addition
 
-let a = 3;
-let b = 17;
-let c = 12;
+let x = 3;
+let z = 17;
+let y = 12;
 
-a += 12;
-b += 9;
-c += 7;
+x += 12;
+z += 9;
+y += 7;
 
 
 
 // Lesson 22: Compound Assignment With Augmented Subtraction
 
-let a = 11;
-let b = 9;
-let c = 3;
+let d = 11;
+let f = 9;
+let g = 3;
 
 // Only change code below this line
-a -= 6;
-b -= 15;
-c -= 1;
+d -= 6;
+f -= 15;
+g -= 1;
 
 
 
 // Lesson 23: Compound Assignment With Augmented Multiplication
 
-let a = 5;
-let b = 12;
-let c = 4.6;
+let h = 5;
+let i = 12;
+let k = 4.6;
 
-a *= 5;
-b *= 3;
-c *= 10;
+h *= 5;
+i *= 3;
+k *= 10;
 
 
 
 // Lesson 24: Compound Assignment With Augmented Division
 
-let a = 48;
-let b = 108;
-let c = 33;
+let l = 48;
+let m = 108;
+let n = 33;
 
-a /= 12;
-b /= 4;
-c /= 11;
+l /= 12;
+m /= 4;
+n /= 11;
 
 
 
@@ -407,4 +407,365 @@ timesFive(5)
 
 // Lesson 52: Global Scope and Functions
 
+// Declare the myGlobal variable below this line
+const myGlobal = 10;
+
+function fun1() {
+  oopsGlobal = 5;
+}
+
+function fun2() {
+  let output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
+
+
+// Lesson 53: Local Scope and Functions
+
+function myLocalScope() {
+
+  const myVar = "test"
+  console.log('inside myLocalScope', myVar);
+}
+myLocalScope();
+
+console.log('outside myLocalScope', myVar);
+
+
+
+// Lesson 54: Global vs. Local Scope in Functions
+
+const outerWear = "T-Shirt";
+
+function myOutfit() {
+  const outerWear = "sweater"
+  return outerWear;
+}
+
+myOutfit();
+
+
+
+// Lesson 55: Understanding Undefined Value returned from a Function
+
+let sum = 0;
+
+function addThree() {
+  sum = sum + 3;
+}
+
+function addFive(){
+  sum = sum + 5;
+}
+
+addThree();
+addFive();
+
+
+
+// lesson 56: Assignment with a Returned Value
+
+let processed = 0;
+
+function processArg(num) {
+  return (num + 3) / 5;
+}
+
+processed = processArg(7);
+
+
+
+// Lesson 57: Stand in Line
+
+function nextInLine(arr, item) {
+  arr.push(item);       
+  var removed = arr.shift();
+  return removed;
+}
+
+let testArr = [1, 2, 3, 4, 5];
+
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
+
+
+
+// Lesson 58: Understanding Boolean Values
+
+function welcomeToBooleans() {
+  return true; 
+}
+
+
+
+// Lesson 59: Use Conditional Logic with If Statements
+
+function trueOrFalse(wasThatTrue) {
+  if (wasThatTrue) {
+    return "Yes, that was true";
+  }
+  return "No, that was false"
+}
+
+trueOrFalse(true)
+trueOrFalse(false)
+
+
+
+// Lesson 60: Comparison with the Equality Operator
+
+function testEqual(val) {
+  if (val == 12) { 
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+testEqual(10);
+
+
+
+// Lesson 61: Comparison with the Strict Equality Operator
+
+function testStrict(val) {
+  if (val === 7) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+testStrict(10);
+
+
+
+// Lesson 62: Practice comparing different values
+
+function compareEquality(a, b) {
+  if (a === b) { 
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+compareEquality(10, "10");
+
+
+
+// Lesson 63: Comparison with the Inequality Operator
+
+function testNotEqual(val) {
+  if (val != 99) { 
+    return "Not Equal";
+  }
+  return "Equal";
+}
+
+testNotEqual(10);
+
+
+
+// Lesson 64: Comparison with the Strict Inequality Operator
+
+function testStrictNotEqual(val) {
+  if (val !== 17) { 
+    return "Not Equal";
+  }
+  return "Equal";
+}
+
+testStrictNotEqual(10);
+
+
+
+// Lesson 65: Comparison with the Greater Than Operator
+
+function testGreaterThan(val) {
+  if (val > 100) {  
+    return "Over 100";
+  }
+
+  if (val > 10) {  
+  }
+
+  return "10 or Under";
+}
+
+testGreaterThan(10);
+
+
+
+//  Lesson 66: Comparison with the Greater Than Or Equal To Operator
+
+function testGreaterOrEqual(val) {
+  if (val >= 20) {  
+  }
+
+  if (val >= 10) {  
+    return "10 or Over";
+  }
+
+  return "Less than 10";
+}
+
+testGreaterOrEqual(10);
+
+
+
+// Lesson 67: Comparison with the Less Than Operator
+
+function testLessThan(val) {
+  if (val < 25) { 
+    return "Under 25";
+  }
+
+  if (val < 55) {  
+    return "Under 55";
+  }
+
+  return "55 or Over";
+}
+
+testLessThan(10);
+
+
+
+// Lesson 68: Comparison with the Less Than Or Equal To Operator
+
+function testLessOrEqual(val) {
+  if (val <= 12) {  
+    return "Smaller Than or Equal to 12";
+  }
+
+  if (val <= 24) {  
+    return "Smaller Than or Equal to 24";
+  }
+
+  return "More Than 24";
+}
+
+testLessOrEqual(10);
+
+
+
+// Lesson 69: Comparisons with the Logical And Operator
+
+function testLogicalAnd(val) {
+if (val <= 50 && val >= 25)
+  return "Yes"
+  return "No";
+}
+
+testLogicalAnd(10);
+
+
+
+// Lesson 70: Comparisons with the Logical Or Operator
+
+function testLogicalOr(val) {
+  if (val < 10 || val > 20) {
+    return "Outside";
+  }
+  return "Inside";
+}
+
+
+
+// Lesson 71: Introducing Else Statements
+
+function testElse(val) {
+  let result = "";
+  if (val > 5) {
+    result = "Bigger than 5";
+  } else {
+    result = "5 or Smaller";
+  }
+  return result;
+}
+
+
+
+// Lesson 72: Introducing Else If Statements
+
+function testElseIf(val) {
+  if (val > 10) {
+    return "Greater than 10";
+  } else if (val < 5) {
+    return "Smaller than 5";
+  } else {
+  return "Between 5 and 10";
+  }
+}
+
+
+
+// Lesson 73: Logical Order in If Else Statements
+
+function orderMyLogic(val) {
+  if (val < 5) {
+    return "Less than 5";
+  } else if (val < 10) {
+    return "Less than 10";
+  } else {
+    return "Greater than or equal to 10";
+  }
+}
+
+orderMyLogic(7);
+
+
+
+// Lesson 74: Chaining If Else Statements
+
+function testSize(num) {
+ if (num < 5) {
+   return "Tiny";
+ } else if (num < 10) {
+   return "Small" ;
+ } else if (num < 15) {
+   return "Medium";
+ } else if (num < 20) {
+   return "Large";
+ } else if (num >= 20) {
+   return "Huge";
+ }
+}
+
+testSize(7);
+
+
+
+// Lesson 75: Golf Code
+
+const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+
+function golfScore(par, strokes) {
+  if (strokes == 1) {
+    return names[0];
+  } else if (strokes <= par - 2) {
+    return names[1];
+  } else if (strokes == par - 1) {
+    return names[2];
+  } else if (strokes == par) {
+    return names[3];
+  } else if (strokes == par + 1) {
+    return names[4];
+  } else if (strokes == par + 2) {
+    return names[5];
+  } else if (strokes >= par + 3) {
+    return names[6];
+  }
+  }
+
+golfScore(5, 4);
+
+
+
+// Lesson 76: Selecting from Many Options with Switch Statements
 
