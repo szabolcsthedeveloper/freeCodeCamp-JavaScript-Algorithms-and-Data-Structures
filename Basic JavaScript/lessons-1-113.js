@@ -1246,3 +1246,151 @@ while (i < 5);
 
 // Lesson 103: Replace Loops using Recursion
 
+function sum(arr, n) {
+  if (n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n-1) + arr[n-1];
+  }
+}
+
+
+
+// Lesson 104: Profile Lookup
+
+const contacts = [
+  {
+    "firstName": "Akira",
+    "lastName": "Laine",
+    "number": "0543236543",
+    "likes": ["Pizza", "Coding", "Brownie Points"]
+  },
+  {
+    "firstName": "Harry",
+    "lastName": "Potter",
+    "number": "0994372684",
+    "likes": ["Hogwarts", "Magic", "Hagrid"]
+  },
+  {
+    "firstName": "Sherlock",
+    "lastName": "Holmes",
+    "number": "0487345643",
+    "likes": ["Intriguing Cases", "Violin", "Smoking Pipes"]
+  },
+  {
+    "firstName": "Kristian",
+    "lastName": "Vos",
+    "number": "unknown",
+    "likes": ["JavaScript", "Gaming", "Foxes"]
+  }
+];
+
+function lookUpProfile(name, prop){
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i].firstName === name) {
+      if (contacts[i].hasOwnProperty(prop)) {
+        return contacts[i][prop]
+      } else {
+        return "No such property"
+      }
+    }
+  }
+  return "No such contact"
+}
+
+lookUpProfile("Akira", "likes");
+
+
+
+// Lesson 105: Generate Random Fractions with JavaScript
+
+function randomFraction() {
+  return Math.random();
+}
+
+
+
+// Lesson 106: Generate Random Whole Numbers with JavaScript
+
+function randomWholeNum() {
+  return Math.floor(Math.random() * 10);
+}
+
+
+
+// Lesson 107: Generate Random Whole Numbers within a Range
+
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+}
+
+
+
+// Lesson 108: Use the parseInt Function
+
+function convertToInteger(str) {
+  return parseInt(str);
+}
+
+convertToInteger("56");
+
+
+
+// Lesson 109: Use the parseInt Function with a Radix
+
+function convertToInteger(str) {
+  return parseInt(str, 2);
+}
+
+convertToInteger("10011");
+
+
+
+// Lesson 110: Use the Conditional (Ternary) Operator
+
+function checkEqual(a, b) {
+  return a === b ? "Equal" : "Not Equal";
+}
+
+checkEqual(1, 2);
+
+
+
+// Lesson 111: Use Multiple Conditional (Ternary) Operators
+
+function checkSign(num) {
+  return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+}
+
+checkSign(10);
+
+
+
+// Lesson 112: Use Recursion to Create a Countdown
+
+function countdown(n){
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countdown(n-1);
+    countArray.unshift(n);
+    return countArray;
+  }
+}
+
+countdown(5);
+
+
+
+// Lesson 113: Use Recursion to Create a Range of Numbers
+
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum < startNum) {
+    return [];
+  } else {
+    const countArray = rangeOfNumbers(startNum, endNum - 1);
+    countArray.push(endNum);
+    return countArray;
+  }
+}
+
