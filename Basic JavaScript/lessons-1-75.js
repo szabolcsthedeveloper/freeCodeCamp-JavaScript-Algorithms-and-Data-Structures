@@ -769,3 +769,480 @@ golfScore(5, 4);
 
 // Lesson 76: Selecting from Many Options with Switch Statements
 
+function caseInSwitch(val) {
+  let answer = "";
+  switch(val) {
+    case 1:
+      answer = "alpha";
+      break;
+    case 2:
+      answer = "beta";
+      break;
+    case 3:
+      answer = "gamma";
+      break;
+    case 4:
+      answer = "delta"
+      break;
+  }
+  return answer;
+}
+
+
+
+// Lesson 77: Adding a Default Option in Switch Statements
+
+function switchOfStuff(val) {
+  let answer = "";
+  switch(val) {
+    case "a":
+      answer = "apple";
+      break;
+    case "b":
+      answer = "bird";
+      break;
+    case "c":
+      answer = "cat";
+      break;
+    default:
+      answer = "stuff";
+      break;
+  }
+  return answer;
+}
+
+
+
+// Lesson 78: Multiple Identical Options in Switch Statements
+
+function sequentialSizes(val) {
+  let answer = "";
+  switch (val){
+    case 1:
+    case 2:
+    case 3:
+      answer = "Low";
+      break;
+    case 4:
+    case 5:
+    case 6:
+      answer = "Mid";
+      break
+    case 7:
+    case 8:
+    case 9:
+      answer = "High";
+      break
+  }
+
+  return answer;
+}
+
+sequentialSizes(1);
+
+
+
+// Lesson 79: Replacing If Else Chains with Switch
+
+function chainToSwitch(val) {
+  let answer = "";
+
+  switch (val) {
+    case "bob":
+      answer = "Marley"
+      break
+    case 42:
+      answer = "The Answer"
+      break
+    case 1:
+      answer = "There is no #1"
+      break
+    case 99:
+      answer = "Missed me by this much!"
+      break
+    case 7:
+      answer = "Ate Nine"
+      break
+  }
+
+  return answer;
+}
+
+chainToSwitch(7);
+
+
+
+// Lesson 80: Returning Boolean Values from Functions
+
+function isLess(a, b) {
+  return a < b;
+}
+
+isLess(10, 15);
+
+
+
+// Lesson 81: Return Early Pattern for Functions
+
+function abTest(a, b) {
+ if (a < 0 || b < 0) {
+   return undefined;
+ }
+
+ return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+
+abTest(2,2);
+
+
+
+// Lesson 82: Counting Cards
+
+let count = 0;
+
+function cc(card) {
+  switch(card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+     count++;
+     break;
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+     count--;
+     break;
+  }
+
+  let holdbet = "Hold"
+  if (count > 0) {
+    holdbet = "Bet"
+  }
+
+  return count + " " + holdbet;
+}
+
+
+// Lesson 83: Build JavaScript Objects
+
+const myDog = {
+  "name": "Pamacs",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["Fanni", "Szabi"]
+};
+
+
+
+// Lesson 84: Accessing Object Properties with Dot Notation
+
+const testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+const hatValue = testObj.hat;
+const shirtValue = testObj.shirt;
+
+
+
+// Lesson 85: Accessing Object Properties with Bracket Notation
+
+const testObj2 = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+const entreeValue = testObj["an entree"];  
+const drinkValue = testObj["the drink"];    
+
+
+
+// Lesson 86: Accessing Object Properties with Variables
+
+const testObj3 = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+const playerNumber = 16;
+const player = testObj[playerNumber];
+
+
+
+// Lesson 87: Updating Object Properties
+
+const myDog2 = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog["name"] = "Happy Coder"
+
+
+
+// Lesson 88: Add New Properties to a JavaScript Object
+
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog.bark = "woof"
+
+
+
+// Lesson 89: Delete Properties from a JavaScript Object
+
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+
+delete myDog.tails;
+
+
+
+// Lesson 90: Using Objects for Lookups
+
+function phoneticLookup(val) {
+  let result = "";
+
+  const lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  };
+
+  result = lookup[val];
+
+  return result;
+}
+
+
+
+// Lesson 91: Testing Objects for Properties
+
+function checkObj(obj, checkProp) {
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } else {
+    return "Not Found";
+  }
+}
+
+
+
+// Lesson 92: Manipulating Complex Objects
+
+const myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },
+  {
+    "artist": "Michael Jackson",
+    "title": "Thriller",
+    "release_year": 1982,
+    "formats": [
+      "CD",
+      "Cassette",
+      "LP"
+    ]
+  }
+];
+
+
+
+// Lesson 93: Accessing Nested Objects
+
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+    },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+
+
+
+// Lesson 94: Accessing Nested Arrays
+
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+const secondTree = myPlants[1].list[1];
+
+
+
+// Lesson 95: Record Collection
+
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+function updateRecords(records, id, prop, value) {
+
+  if (prop !== 'tracks' && value !== "") {
+    records[id][prop] = value;
+  } else if (prop === "tracks" && records[id].hasOwnProperty("tracks") === false) {
+    records[id][prop] = [value];
+  } else if (prop === "tracks" && value !== "") {
+    records[id][prop].push(value);
+  } else if (value === "") {
+    delete records[id][prop];
+  }
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+
+
+// Lesson 96: Iterate with JavaScript While Loops
+
+const myArray10 = [];
+let i2 = 5;
+
+while (i2 >= 0){
+  myArray.push(i);
+  i--;
+}
+
+
+
+// Lesson 97: Iterate with JavaScript For Loops
+
+const myArray11 = [];
+
+for (let i = 1; i < 6; i++) {
+  myArray.push(i)
+}
+
+
+
+// Lesson 98: Iterate Odd Numbers With a For Loop
+
+const myArray12 = [];
+
+for (let i = 1; i <= 9; i += 2) {
+  myArray.push(i);
+}
+
+
+
+// Lesson 99: Count Backwards With a For Loop
+
+const myArray13 = [];
+
+for (let i = 9; i > 0; i -= 2) {
+  myArray.push(i);
+}
+
+
+
+// Lesson 100: Iterate Through an Array with a For Loop
+
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
+
+for (let i = 0; i < myArr.length; i++) {
+  total += myArr[i];
+}
+
+
+
+// Lesson 101: Nesting For Loops
+
+function multiplyAll(arr) {
+  let product = 1;
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j=0; j < arr[i].length; j++) {
+      product *= arr[i][j];
+    }
+  }
+
+  return product;
+}
+
+
+
+// Lesson 102: Iterate with JavaScript Do...While Loops
+
+const myArray14 = [];
+let i3 = 10;
+
+do {
+  myArray.push(i);
+  i++;
+}
+
+while (i < 5);
+
+
+
+// Lesson 103: Replace Loops using Recursion
+
